@@ -33,13 +33,13 @@
 
     <TextView
         android:id="@+id/answersResourceText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:text="@string/question_1"
         android:textColor="@color/colorText"
         android:textSize="21sp"
         android:padding="7dp"
-        />
+        android:gravity="center_vertical"/>
 
     <LinearLayout
         android:id="@+id/rootTrueFalseLayout"
@@ -75,13 +75,34 @@
 
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/nextBtn"
-        android:contentDescription="@string/next_button"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@android:drawable/ic_media_next"
-        android:background="@color/colorNextButton"
-        android:layout_marginTop="25dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="25dp">
+
+        <ImageButton
+            android:id="@+id/previousBtn"
+            android:contentDescription="@string/next_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="10dp"
+            android:src="@android:drawable/ic_media_previous"
+            android:background="@color/colorPreviousButton"/>
+
+        <ImageButton
+            android:id="@+id/nextBtn"
+            android:contentDescription="@string/previous_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="0dp"
+            android:src="@android:drawable/ic_media_next"
+            android:background="@color/colorNextButton"/>
+
+    </LinearLayout>
+
 
 </LinearLayout>

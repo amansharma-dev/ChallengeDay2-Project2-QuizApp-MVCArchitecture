@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button trueButton;
     private Button falseButton;
     private ImageButton nextButton;
+    private ImageButton previousButton;
+
     private Question[] question = new Question[]{
             new Question(R.string.question_1,false),
             new Question(R.string.question_2,true),
@@ -43,10 +45,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         trueButton = findViewById(R.id.trueBtn);
         falseButton = findViewById(R.id.falseBtn);
         nextButton = findViewById(R.id.nextBtn);
+        previousButton = findViewById(R.id.previousBtn);
 
         trueButton.setOnClickListener(this);
         falseButton.setOnClickListener(this);
         nextButton.setOnClickListener(this);
+        previousButton.setOnClickListener(this);
     }
 
     @Override
@@ -62,12 +66,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.nextBtn:
                 currentQuestionIndex = (currentQuestionIndex + 1) % question.length;
-                answerRes.setText(question[currentQuestionIndex].getAnswerResId());
-                Log.d(TAG, "onClick: " + currentQuestionIndex);
+                updateQuestion();
+                Log.d(TAG, "next: "+currentQuestionIndex);
                 break;
+
+            case R.id.previousBtn:
+
+                if(currentQuestionIndex>0){
+                    currentQuestionIndex = (currentQuestionIndex -1) % question.length;
+                    updateQuestion();
+                    Log.d(TAG, "previous: "+currentQuestionIndex);
+
+                }
+
+                break;
+
         }
     }
 
+    private void updateQuestion(){
+        answerRes.setText(question[currentQuestionIndex].getAnswerResId());
+    }
     private void checkAnswer(boolean checkAnswerIsTrue){
 
         boolean isAnswerTrue = question[currentQuestionIndex].isAnswerTrue();

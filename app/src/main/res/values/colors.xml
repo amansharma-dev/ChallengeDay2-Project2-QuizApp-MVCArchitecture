@@ -7,4 +7,5 @@
     <color name="colorText">#204969</color>
     <color name="colorButtonBackground">#dadada</color>
     <color name="colorNextButton">#08ffc8</color>
+    <color name="colorPreviousButton">#08ffc8</color>
 </resources>

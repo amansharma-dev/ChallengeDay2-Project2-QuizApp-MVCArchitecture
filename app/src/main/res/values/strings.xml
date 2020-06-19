@@ -14,6 +14,7 @@
     <string name="buttonText_true">True</string>
     <string name="buttonText_false">False</string>
     <string name="next_button">Next Button</string>
+    <string name="previous_button">Previous Button</string>
     <string name="correct_answer">Correct Answer</string>
     <string name="wrong_answer">Wrong Answer</string>
 </resources>
